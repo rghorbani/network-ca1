@@ -32,6 +32,16 @@
 #define EXIT 9
 #define UNKNOWN_COMM -1
 
+//reply MSG
+#define MSG100 "It's Ok"
+#define MSG101 "Duplicate username or email"
+#define MSG102 "Wrong username or password"
+#define MSG103 "Wrong status"
+#define MSG104 "Not found"
+#define MSG105 "Not connected"
+#define MSG106 "Not your friend"
+#define MSG107 "Not sent"
+
 //server file operation status
 #define NOT_FOUND 11
 #define NO_SEED 12

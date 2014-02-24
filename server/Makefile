@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -g -O2
-OBJECTS = server.o defines.o func_lib.o info.o
+OBJECTS = main.o server.o
 
 main.out : $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o server

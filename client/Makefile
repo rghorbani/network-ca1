@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -g -O2
-OBJECTS = client.o defines.o func_lib.o
+OBJECTS = main.o client.o
 
 main.out : $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o client
