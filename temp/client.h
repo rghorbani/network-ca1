@@ -1,4 +1,8 @@
-#include "../common/defines.h"
+#ifndef SG_Client_class
+#define SG_Client_class
+
+#include "ClientSocket.h"
+#include "defines.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
@@ -21,20 +25,26 @@ using namespace std;
 class SG_Client {
 private:
 	bool connected;
+	bool loggedIn;
+	bool userSelected;
+	/*
 	int maxSocket;
 	int fd;
 	int serverFD;
+	*/
+	ClientSocket client;
 	string serverIP;
-	string serverPort;
+	int serverPort;
 	fd_set clientfds, safeSet;
 
 public:
-	SG_Client(string, string);
+	// SG_Client();
+	SG_Client(string, int);
 	int connectToServer();
 	int working();
-	void get_command();
+	int get_command();
 
-	void register(string, string, string);
+	void register_user(string, string, string);
 	void login(string, string);
 	void changeStatus(string);
 	void who(string);
@@ -45,3 +55,5 @@ public:
 	void sg_exit();
 	
 };
+
+#endif

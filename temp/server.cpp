@@ -1,13 +1,13 @@
 #include "server.h"
 
-SG_Server::SG_Server(string port) {
+SG_Server::SG_Server(int port) {
 	(*this).port = port;
 	FD_ZERO(&client_fds);
     FD_ZERO(&safeSet);
 }
 
 void SG_Server::init(char* args[]) {
-
+	/*
 	struct sigaction sa;
 
 	struct addrinfo hints, *servinfo, *p;
@@ -63,11 +63,14 @@ void SG_Server::init(char* args[]) {
     FD_SET(0, &safeSet);
 
     cerr << "[INIT] Server is up and runnig...\n\n";
+    */
 
+    ServerSocket server_socket ( 30000 );
+    server = server_socket;
 }
 
 int SG_Server::working() {
-
+	/*
 	int incoming_socket;
 	ssize_t recievedBytes;
 	struct sockaddr_storage clientAddress;
@@ -177,6 +180,15 @@ int SG_Server::working() {
 				}
 			}
 		}
+	}
+	*/
+
+	ServerSocket new_sock;
+	server.accept ( new_sock );
+	string received;
+	while(true) {
+		new_sock >> received;
+		new_sock << "done";
 	}
 }
 

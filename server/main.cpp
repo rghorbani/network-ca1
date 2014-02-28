@@ -15,5 +15,9 @@ int main(int argc, char *argv[]) {
 
 	server->init(argv);
 
+	while(server->working()) {
+		
+	}
+
 	return 0;
 }

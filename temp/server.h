@@ -1,4 +1,5 @@
-#include "../common/defines.h"
+#include "defines.h"
+#include "ServerSocket.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
@@ -22,11 +23,12 @@ private:
 	int listener;
 	int maxSocket;
 	int sockfd;
-	string port;
+	int port;
 	fd_set client_fds, safeSet;
+	ServerSocket server;
 
 public:
-	SG_Server(string);
+	SG_Server(int);
 	void init(char* args[]);
 	int working();
 };

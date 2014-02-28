@@ -1,6 +1,6 @@
 #ifndef __DFN__
 #include <stdio.h>
-#include <stdbool.h>
+// #include <stdbool.h>
 #include <stdio.h>
 #include <signal.h>
 #include <sys/wait.h>
@@ -42,6 +42,11 @@
 #define MSG105 "Not connected"
 #define MSG106 "Not your friend"
 #define MSG107 "Not sent"
+
+//Status
+#define OFFLINE 0
+#define AVAILABLE 1
+#define BUSY 2
 
 //server file operation status
 #define NOT_FOUND 11
